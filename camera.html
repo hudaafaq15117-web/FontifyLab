@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Premium Camera - Handwriting Font Generator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>📸 Capture Your Premium Alphabet Sheet</h1>
+    <p id="instruction">✨ Write A-Z neatly on paper using the LIVE grid overlay (2 rows: A-M top, N-Z bottom). Fill frame, good lighting, straight paper. ONE photo generates your custom font!</p>
+    
+    <div id="status" class="status">🔄 Loading premium camera...</div>
+    
+    <div id="cameraView" style="position: relative; display: inline-block;">
+      <video id="video" autoplay playsinline muted></video>
+      <canvas id="templateCanvas" style="position: absolute; top: 0; left: 0; pointer-events: none; z-index: 10;"></canvas>
+    </div>
+    
+    <canvas id="canvas" style="display:none;"></canvas>
+    
+    <div class="controls">
+      <button id="captureBtn" disabled>🎯 Capture Sheet</button>
+      <button id="submitBtn" disabled>✨ Generate Premium Font</button>
+      <button id="backBtn">← Back to Start</button>
+    </div>
+    
+    <div id="gallery" class="gallery"></div>
+  </div>
+  <script src="camera.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
+
