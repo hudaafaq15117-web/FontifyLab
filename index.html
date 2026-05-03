@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Premium Handwriting Font Generator</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✨</text></svg>">
+</head>
+<body>
+  <div class="container">
+    <h1>✨ Premium Handwriting Font Generator</h1>
+    <p>Transform your unique handwriting into a professional custom font in seconds. Perfect for branding, logos & designs.</p>
+    
+    <ul>
+      <li>📱 Instant mobile/desktop camera capture</li>
+      <li>🎯 AI-guided grid overlay for perfect A-Z alignment</li>
+      <li>⚡ Real-time preview & instant PNG export</li>
+      <li>🌟 Glassmorphism premium design</li>
+    </ul>
+    
+    <div style="background: rgba(255,255,255,0.1); padding: 1.5rem; border-radius: 16px; margin: 2rem 0; border: 1px solid rgba(255,255,255,0.2);">
+      <strong>💡 Pro Tip:</strong> Use <strong>Live Server extension</strong> or <code>npx serve .</code> for HTTPS (required for camera). Chrome works best!
+    </div>
+    
+    <button id="startBtn" class="start-btn">🚀 Start Creating My Font</button>
+    <p style="font-size: 0.9rem; opacity: 0.8; margin-top: 2rem;">Powered by Canvas & MediaDevices API • 100% Client-Side</p>
+  </div>
+  <script src="script.js"></script>
+  <script>
+    document.getElementById('startBtn').addEventListener('click', () => {
+      window.location.href = 'camera.html';
+    });
+  </script>
+</body>
+</html>
+
