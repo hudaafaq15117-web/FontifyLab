@@ -13,13 +13,14 @@
 
 **Instructions**: Run the demo command to test.
 
+**Bugfix Applied**: Fixed localStorage key mismatch - upload now shows preview properly.
 **All Steps Complete**:
 **Step 1**: Automation ready.
-**Step 2**: Landing detects HTTPS need, offers server launch.
-**Step 3/4**: Camera page fallback to image upload if no camera/HTTPS.
-**Test**: Double-click `start-https.bat` or run command → https://localhost:3000 → click Start → camera works (or upload).
+**Step 2**: Landing detects HTTPS need.
+**Step 3/4**: Upload/capture both save to preview key.
+**Test**: Upload image → Submit → live preview works!
 
-Current status: Fixed! 🎉
+Current status: Fully fixed! 🎉
 
 
 
