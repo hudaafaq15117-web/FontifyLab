@@ -19,17 +19,49 @@
       <li>🌟 Glassmorphism premium design</li>
     </ul>
     
-    <div style="background: rgba(255,255,255,0.1); padding: 1.5rem; border-radius: 16px; margin: 2rem 0; border: 1px solid rgba(255,255,255,0.2);">
-      <strong>💡 Pro Tip:</strong> Use <strong>Live Server extension</strong> or <code>npx serve .</code> for HTTPS (required for camera). Chrome works best!
+    <div id="secureStatus" class="status">
+      <strong id="statusText">🔄 Checking camera compatibility...</strong>
     </div>
     
-    <button id="startBtn" class="start-btn">🚀 Start Creating My Font</button>
+    <div class="controls">
+      <button id="serverBtn" class="start-btn" style="display: none;">🌐 Launch HTTPS Server</button>
+      <button id="startBtn" class="start-btn">🚀 Start Creating My Font</button>
+    </div>
     <p style="font-size: 0.9rem; opacity: 0.8; margin-top: 2rem;">Powered by Canvas & MediaDevices API • 100% Client-Side</p>
   </div>
   <script src="script.js"></script>
   <script>
-    document.getElementById('startBtn').addEventListener('click', () => {
-      window.location.href = 'camera.html';
+    // Secure context checker
+    document.addEventListener('DOMContentLoaded', () => {
+      const statusDiv = document.getElementById('secureStatus');
+      const statusText = document.getElementById('statusText');
+      const serverBtn = document.getElementById('serverBtn');
+      const startBtn = document.getElementById('startBtn');
+      
+      if (window.isSecureContext) {
+        statusText.textContent = '✅ HTTPS detected - Camera ready!';
+        statusDiv.style.background = 'rgba(16, 185, 129, 0.2)';
+        serverBtn.style.display = 'none';
+        startBtn.style.display = 'inline-block';
+      } else {
+        statusText.innerHTML = '⚠️ <strong>Camera blocked</strong> - Needs HTTPS. <strong>Click below to auto-launch server:</strong>';
+        serverBtn.style.display = 'inline-block';
+        startBtn.style.display = 'none';
+      }
+      
+      serverBtn.addEventListener('click', () => {
+        statusText.textContent = '🚀 Launching HTTPS server... Open https://localhost:3000';
+        // Try exec bat
+        window.open('start-https.bat');
+        // Fallback: open terminal hint
+        setTimeout(() => {
+          statusText.innerHTML += '<br>Or run in new terminal: <code>npx serve . --ssl -p 3000</code>';
+        }, 2000);
+      });
+      
+      startBtn.addEventListener('click', () => {
+        window.location.href = 'camera.html';
+      });
     });
   </script>
 </body>

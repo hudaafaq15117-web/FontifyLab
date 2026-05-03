@@ -1,0 +1,12 @@
+{
+  "name": "handwriting-font-generator",
+  "version": "1.0.0",
+  "description": "Premium Handwriting Font Generator - Client-side camera app",
+  "scripts": {
+    "serve": "serve . -l 3000 --ssl-cert cert.pem --ssl-key key.pem",
+    "serve-simple": "serve . -l 3000"
+  },
+  "devDependencies": {
+    "serve": "^14.2.3"
+  }
+}

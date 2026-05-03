@@ -20,8 +20,11 @@
     
     <canvas id="canvas" style="display:none;"></canvas>
     
+    <input type="file" id="uploadFallback" accept="image/*" capture="environment" style="display:none;">
+    
     <div class="controls">
       <button id="captureBtn" disabled>🎯 Capture Sheet</button>
+      <button id="uploadBtn" class="start-btn" style="display:none;">📁 Upload Sheet Image</button>
       <button id="submitBtn" disabled>✨ Generate Premium Font</button>
       <button id="backBtn">← Back to Start</button>
     </div>
